@@ -1,0 +1,27 @@
+g = 0
+
+def outer(commands):
+    n = 0
+    def inner():
+        nonlocal n
+        global g
+        local_var = 0
+        for scope, value in commands:
+            if scope == "global":
+                g += value
+            elif scope == "nonlocal":
+                n += value
+            elif scope == "local":
+                local_var += value
+    inner()
+    return n
+
+q = int(input())
+commands = []
+for _ in range(q):
+    scope, value = input().split()
+    commands.append((scope, int(value)))
+
+n = outer(commands)
+
+print(g, n)
