@@ -1,0 +1,10 @@
+Shop Receipt
+
+Bread 2.50
+Milk 1.80
+Chocolate 3.20
+
+Date: 17/02/2025
+Time: 14:35
+
+Payment: Card
